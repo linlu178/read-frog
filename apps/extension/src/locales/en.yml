@@ -33,6 +33,7 @@ options:
     description:
       openai: Provides models like GPT-4o
       deepseek: Recommend to use in China
+      gemini: Google's Gemini models
       openrouter: The unified interface for multiple LLM providers
       ollama: Local LLM
     apiKey:

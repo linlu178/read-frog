@@ -33,6 +33,7 @@ options:
     description:
       openai: GPT-4oなどのモデルを提供
       deepseek: 中国国内での使用を推奨
+      gemini: Google Gemini モデル
       openrouter: 複数のLLMプロバイダを統合するインターフェース
     apiKey:
       showAPIKey: APIキーを表示

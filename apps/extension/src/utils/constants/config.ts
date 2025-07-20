@@ -23,6 +23,10 @@ export const DEFAULT_PROVIDER_CONFIG: ProvidersConfig = {
     apiKey: undefined,
     baseURL: 'https://api.deepseek.com/v1',
   },
+  gemini: {
+    apiKey: undefined,
+    baseURL: 'https://generativelanguage.googleapis.com/v1',
+  },
   openrouter: {
     apiKey: undefined,
     baseURL: 'https://openrouter.ai/api/v1',
@@ -44,7 +48,12 @@ export const DEFAULT_READ_MODELS: ReadModels = {
     isCustomModel: false,
     customModel: '',
   },
-}
+  gemini: {
+    model: 'gemini-pro',
+    isCustomModel: false,
+    customModel: '',
+  },
+} 
 
 export const DEFAULT_TRANSLATE_MODELS: TranslateModels = {
   microsoft: null,
@@ -56,6 +65,11 @@ export const DEFAULT_TRANSLATE_MODELS: TranslateModels = {
   },
   deepseek: {
     model: 'deepseek-chat',
+    isCustomModel: false,
+    customModel: '',
+  },
+  gemini: {
+    model: 'gemini-pro',
     isCustomModel: false,
     customModel: '',
   },
@@ -122,6 +136,10 @@ export const PROVIDER_ITEMS: Record<AllProviderNames, { logo: string, name: stri
     deepseek: {
       logo: deepseekLogo,
       name: 'DeepSeek',
+    },
+    gemini: {
+      logo: openaiLogo,
+      name: 'Gemini',
     },
     openrouter: {
       logo: openrouterLogo,
