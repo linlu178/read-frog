@@ -7,10 +7,12 @@ import { HOTKEYS } from '@/utils/constants/hotkeys'
 export const readProviderModels = {
   openai: ['gpt-4.1-mini', 'gpt-4o-mini', 'gpt-4o', 'gpt-4.1', 'gpt-4.1-nano'],
   deepseek: ['deepseek-chat'],
+  gemini: ['gemini-pro'],
 } as const
 export const translateProviderModels = {
   openai: ['gpt-4.1-mini', 'gpt-4o-mini', 'gpt-4o', 'gpt-4.1', 'gpt-4.1-nano'],
   deepseek: ['deepseek-chat'],
+  gemini: ['gemini-pro'],
   openrouter: ['meta-llama/llama-4-maverick:free', 'deepseek/deepseek-chat-v3-0324:free', 'deepseek/deepseek-prover-v2:free'],
   ollama: ['deepseek-r1:8b', 'gemma3:1b', 'qwen3:0.6b', 'qwen3:8b', 'gemma3:latest', 'llama3.1:8b'],
 } as const
@@ -21,17 +23,17 @@ export const pureTranslateProvider = ['google', 'microsoft'] as const
   ────────────────────────────── */
 
 // read provider names
-export const readProviderNames = ['openai', 'deepseek'] as const satisfies Readonly<
+export const readProviderNames = ['openai', 'deepseek', 'gemini'] as const satisfies Readonly<
   (keyof typeof readProviderModels)[]
 >
 export type ReadProviderNames = typeof readProviderNames[number]
 // translate provider names
-export const translateProviderNames = ['google', 'microsoft', 'openai', 'deepseek', 'openrouter', 'ollama'] as const satisfies Readonly<
+export const translateProviderNames = ['google', 'microsoft', 'openai', 'deepseek', 'gemini', 'openrouter', 'ollama'] as const satisfies Readonly<
   (keyof typeof translateProviderModels | typeof pureTranslateProvider[number])[]
 >
 export type TranslateProviderNames = typeof translateProviderNames[number]
 // translate provider names that support LLM
-export const llmTranslateProviderNames = ['openai', 'deepseek', 'openrouter', 'ollama'] as const satisfies Readonly<
+export const llmTranslateProviderNames = ['openai', 'deepseek', 'gemini', 'openrouter', 'ollama'] as const satisfies Readonly<
   (keyof typeof translateProviderModels)[]
 >
 export type LLMTranslateProviderNames = typeof llmTranslateProviderNames[number]
@@ -40,13 +42,13 @@ export function isLLMTranslateProvider(provider: TranslateProviderNames): provid
 }
 
 // all provider names
-export const allProviderNames = ['openai', 'deepseek', 'google', 'microsoft', 'openrouter', 'ollama'] as const satisfies Readonly<
+export const allProviderNames = ['openai', 'deepseek', 'gemini', 'google', 'microsoft', 'openrouter', 'ollama'] as const satisfies Readonly<
   (typeof readProviderNames[number] | typeof translateProviderNames[number])[]
 >
 export type AllProviderNames = typeof allProviderNames[number]
 
 // need to be set api key for LLM
-export const apiProviderNames = ['openai', 'deepseek', 'openrouter', 'ollama'] as const satisfies Readonly<
+export const apiProviderNames = ['openai', 'deepseek', 'gemini', 'openrouter', 'ollama'] as const satisfies Readonly<
   (keyof typeof readProviderModels | keyof typeof translateProviderModels)[]
 >
 export type APIProviderNames = typeof apiProviderNames[number]
